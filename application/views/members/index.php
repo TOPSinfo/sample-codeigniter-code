@@ -1,5 +1,14 @@
 <div class="container">
-    <h2><?php echo $title; ?></h2>
+    <div class="row">
+        <div class="col-lg-6">
+            <h4><?php echo $title; ?></h4>
+        </div>
+        <div class="col-lg-6 text-right">
+            <!-- Add link -->
+            <a href="<?php echo site_url('members/add/'); ?>" class="btn btn-success"><i class="plus"></i> New Member</a>
+        </div>
+    </div>
+    
     
     <!-- Display status message -->
     <?php if(!empty($success_msg)){ ?>
@@ -23,14 +32,9 @@
                         <input type="submit" name="submitSearchReset" class="btn btn-outline-secondary" value="Reset">
                     </div>
                 </div>
-            </form>
-            
-            <!-- Add link -->
-            <div class="float-right">
-                <a href="<?php echo site_url('members/add/'); ?>" class="btn btn-success"><i class="plus"></i> New Member</a>
-            </div>
+            </form>            
         </div>
-        
+        <div class="col-md-12">
         <!-- Data list table --> 
         <table class="table table-striped table-bordered">
             <thead class="thead-dark">
@@ -54,9 +58,9 @@
                     <td><?php echo $row['gender']; ?></td>
                     <td><?php echo $row['country']; ?></td>
                     <td>
-                        <a href="<?php echo site_url('members/view/'.$row['id']); ?>" class="btn btn-primary">view</a>
-                        <a href="<?php echo site_url('members/edit/'.$row['id']); ?>" class="btn btn-warning">edit</a>
-                        <a href="<?php echo site_url('members/delete/'.$row['id']); ?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete?')">delete</a>
+                        <a href="<?php echo site_url('members/view/'.$row['id']); ?>" class="btn btn-primary">View</a>
+                        <a href="<?php echo site_url('members/edit/'.$row['id']); ?>" class="btn btn-warning">Edit</a>
+                        <a href="<?php echo site_url('members/delete/'.$row['id']); ?>" class="btn btn-danger" onclick="return confirm('Are you sure to delete?')">Delete</a>
                     </td>
                 </tr>
                 <?php } }else{ ?>
@@ -64,10 +68,11 @@
                 <?php } ?>
             </tbody>
         </table>
-    
         <!-- Display pagination links -->
         <div class="pagination pull-right">
             <?php echo $this->pagination->create_links(); ?>
         </div>
+        </div>
+        
     </div>
 </div>

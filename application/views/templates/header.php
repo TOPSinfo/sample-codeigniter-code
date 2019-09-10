@@ -7,3 +7,8 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">
 </head>
 <body>
+	<header>
+		<div class="container">
+			<img src="<?php echo base_url('assets/img/logo.svg'); ?>" width="200" />
+		</div>
+	</header>
